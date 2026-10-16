@@ -78,14 +78,25 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+Windows (Command Prompt):
+
+```
+py -3.13 -m venv venv
+venv\Scripts\activate.bat
+pip install -r requirements.txt
+copy .env.example .env
+```
+
 Windows (PowerShell):
 
 ```
-py -3 -m venv venv
+py -3.13 -m venv venv
 venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 ```
+
+If PowerShell refuses to run `Activate.ps1` (script execution is disabled), use the Command Prompt commands above instead. If you do not have Python 3.13, use `py -3` for whichever 3.11 or newer you have installed.
 
 For running the tests and lint, install `requirements-dev.txt` instead (it includes `requirements.txt`). Direct dependencies are pinned to the versions I tested with; transitive ones are left to pip.
 
